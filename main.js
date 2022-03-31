@@ -6,7 +6,7 @@ const findFrequency = function(array) {
   // your code here - don't forget to return an object!
 };
 
-function palindrome(str) {
+const isPalindrome = function(str) {
     var re = /[\W_]/g;
     var lowRegStr = str.toLowerCase().replace(re, '');
     var reverseStr = lowRegStr.split('').reverse().join(''); 
@@ -14,11 +14,19 @@ function palindrome(str) {
  };
 
 const largestPair = function(array) {
-  // your code here - don't forget to return a number!
+  let max = -Infinity;
+    for (let i = 1; i < array.length; i++) {
+        max = Math.max(array[i] * array[i - 1], max);
+    }
+    return max;
 };
 
 const removeParenth = function(str) {
-  // your code here - don't forget to return a string!
+  do {
+        removeParenth = str;
+        str = str.replace(/\([^\)\(]*\)/, "");
+    } while (removeParenth != str);
+    return removeParenth
 };
 
 const scoreScrabble = function(str) {
